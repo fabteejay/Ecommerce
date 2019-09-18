@@ -5,7 +5,8 @@
   "dependencies": {
     "node-sass": "4.12.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "react-scripts": "3.0.0"
@@ -30,5 +31,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Going through our folder structure for the project, breaking out homepage component into smaller components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walosha/ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walosha/ecommerce/issues"
+  },
+  "homepage": "https://github.com/walosha/ecommerce#readme"
 }
