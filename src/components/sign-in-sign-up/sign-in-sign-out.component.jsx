@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import SignIn from "./sign-in.componet";
+import SignIn from "../sign-in/sign-in.componet";
 import SignUp from "../sign-up/sign-up.component";
-import "./sign-in.styles.scss";
+
+import "../sign-in/sign-in.styles.scss";
 
 class SignInAndSignUpPage extends Component {
   render() {
