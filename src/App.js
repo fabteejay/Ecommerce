@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { userAction } from "./redux/users/users-action";
@@ -24,7 +24,7 @@ class App extends React.Component {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(Snapshot => {
-          // console.log(Snapshot);
+          console.log(Snapshot);
           userAction({
             currentUser: Snapshot.id,
             ...Snapshot.data()
@@ -41,14 +41,23 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("App---", this.props);
+    const { currentUser } = this.props.user;
     return (
       <div>
         <Header />
         <Switch>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/shop" component={ShopPage}></Route>
-          <Route path="/sign-in" component={SignInAndSignUpPage}></Route>
+          <Route
+            path="/sign-in"
+            render={() =>
+              currentUser ? (
+                <Redirect to="/"></Redirect>
+              ) : (
+                <SignInAndSignUpPage></SignInAndSignUpPage>
+              )
+            }
+          ></Route>
         </Switch>
       </div>
     );
