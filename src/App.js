@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
+import Checkout from "./pages/checkout/checkout";
 import { userAction } from "./redux/users/users-action";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./components/shop/ShopPage";
@@ -48,6 +49,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/shop" component={ShopPage}></Route>
+          <Route path="/checkout" component={Checkout}></Route>
           <Route
             path="/sign-in"
             render={() =>
