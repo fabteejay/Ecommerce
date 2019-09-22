@@ -30,4 +30,17 @@
     padding-left: 12px;
     cursor: pointer;
   }
+
+  .quantity {
+    display: flex;
+    // justify-content: space-evenly;
+    // margin: 3px auto;
+  }
+
+  .arrow {
+    cursor: pointer;
+  }
+  .value {
+    margin: 0 10px;
+  }
 }
